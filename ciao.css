@@ -1,0 +1,91 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main container styling */
+.container {
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    max-width: 400px;
+}
+
+/* Title Styling */
+h1 {
+    color: #d76d77;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Message Styling */
+.message {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Added transition for smooth scaling */
+}
+
+/* Yes button */
+.yes {
+    background-color: #f95d6a;
+    color: white;
+}
+
+.yes:hover {
+    background-color: #e64e5a;
+    transform: scale(1.1);
+}
+
+/* No button */
+.no {
+    background-color: #c1c1c1;
+    color: #333;
+}
+
+.no:hover {
+    background-color: #a8a8a8;
+    transform: scale(1.1);
+}
+
+/* Hover animation for buttons */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

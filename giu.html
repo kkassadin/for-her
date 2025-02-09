@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAN valentine</title>
+    <link rel="stylesheet" href="ciao.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🌹 Vuoi essere la mia melody per il tuo fantastico kuromi? 🌹</h2>
+        <p class="message">💕PER FAVOREEEEEEEEEEEEEEEEEE 💕</p>
+        <div class="buttons">
+            <button class="yes">Yes! 💖</button>
+            <button class="no">No 💔</button>
+        </div>
+    </div>
+    <script>
+        let yesButton = document.getElementById("yesButton");
+        let noButton = document.getElementById("noButton");
+        let clickCount = 0;
+
+        function handleNoClick() {
+            // Increase the size of the "Yes" button every time "No" is clicked
+            clickCount++;
+            yesButton.style.transform = `scale(${1 + clickCount * 0.1})`;
+
+            // Change the text on the "No" button
+            if (clickCount === 1) {
+                noButton.innerText = "Try Again 💔";
+            }
+        }
+    </script>
+</body>
+</html>
