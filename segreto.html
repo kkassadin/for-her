@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mia Valentina</title>
+    <style>
+        body {
+            font-family: "Barriecito", serif;
+            font-weight: 100;
+            font-style: normal;
+            text-align: center;
+            background-color: #f3d1e5;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            color: #ff3366;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        p {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #ff3366;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ff1a4d;
+        }
+        .btn:focus {
+            outline: none;
+        }
+        #yes-btn {
+            font-size: 1.5em;
+        }
+        #no-btn{
+            font-size: 1.5em;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+        </style>
+    
+</head>
+<body>
+    <h1>Sei la mia Valentina?</h1>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmNrNnZpZjF3dDVrZ2pqcGc0OGMybnU0OHBsZ3B2ZTZ2ZGx0YWpuOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/I1nwVpCaB4k36/giphy.gif" style="margin-top:10px;" style="mar" ></img>
+   
+    <div class="container">
+        <button id="yes-btn" class="btn" onclick="handleYesClick()">Si</button>
+        <button id="no-btn" class="btn" onclick="handleNoClick()">No</button>
+    </div>
+
+    <script>
+        var sizeIncrement = 3.0;  // Incremento della dimensione del pulsante "Sì"
+        var maxSize = 10000;  // Limite massimo della dimensione
+        var clickCount = 0;  // Contatore dei clic su "No"
+        var noTextOptions = [
+            "no",
+            "ancora no?",
+            "eddai",
+            "perche no?",
+            "ancora no...?",
+            "pensaci dai",
+            "ripensaci",
+            "pensaci di piu",
+             "pleaseeeeeeeeee",
+             "EDDAIAIAIA",
+             "DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI",
+             "E DI DI SI ",
+        ];  // Testi alternati per il pulsante "No"
+
+        // Funzione per gestire il click su "Sì"
+        function handleYesClick() {
+            var yesBtn = document.getElementById("yes-btn");
+
+            // Se il pulsante "Sì" è abbastanza grande, cambia il contenuto della pagina
+            if (yesBtn) {
+                document.body.innerHTML = "<h1>Grazie di cuore, sei la mia Valentina! 💖</h1>";
+                document.body.innerHTML = HTMLImageElement
+            }
+        }
+        // Funzione per gestire il click su "No"
+        function handleNoClick() {
+            var yesBtn = document.getElementById("yes-btn");
+            var noBtn = document.getElementById("no-btn");
+
+            // Aumenta la dimensione del pulsante "Sì" ogni volta che "No" viene cliccato
+            clickCount++;
+            var newSize = 1.5 + sizeIncrement * clickCount;
+            yesBtn.style.fontSize = newSize + "em";  // Aumenta progressivamente
+
+            // Se il pulsante "Sì" è diventato troppo grande, non aumentare più la sua dimensione
+            if (newSize >= maxSize) {
+                yesBtn.style.fontSize = maxSize + "em";  // Imposta la dimensione massima
+            }
+
+            // Cambia il testo del pulsante "No" a uno dei nuovi testi
+            var newTextIndex = clickCount % noTextOptions.length;  // Cambia il testo in base al contatore dei clic
+            noBtn.innerText = noTextOptions[newTextIndex];
+        }
+    </script>
+</body>
+</html>
